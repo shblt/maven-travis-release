@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 RELEASE_VERSION=$(echo $TRAVIS_COMMIT_MSG | grep -P '^Merge\spull\srequest\s.*\sfrom\s.*\/release-(v[\d.-]+$)' | grep -P -o 'release-(v[\d.-]+$)')
 
