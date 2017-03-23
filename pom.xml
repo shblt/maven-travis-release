@@ -12,9 +12,11 @@
         <jdk.version>1.8</jdk.version>
         <okhttp3.version>3.6.0</okhttp3.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.repository>file://${basedir}/build/</maven.repository>
     </properties>
 
     <scm>
+        <!-- placeholder! change me! -->
         <connection>scm:git:ssh://git@github.com/shblt/maven-travis-release-depoyment.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/shblt/maven-travis-release-depoyment.git</developerConnection>
         <url>http://github.com/shblt/maven-travis-release-depoyment</url>
@@ -70,7 +72,12 @@
     </build>
 
     <distributionManagement>
-        <!-- ... -->
+        <!-- placeholder! change me! -->
+        <repository>
+            <id>maven-repository</id>
+            <name>local</name>
+            <url>${maven.repository}</url>
+        </repository>
     </distributionManagement>
 
 </project>
