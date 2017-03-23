@@ -1,0 +1,21 @@
+# build on master and release-vX.Y.Z branches only
+branches:
+  only:
+  - master
+  - "/^release-v[\\d.-]+$/"
+language: java
+jdk:
+  - oraclejdk8
+# setup git user and expose the last commit message
+before_install:
+- git config --global user.name "Travis CI"
+- git config --global user.email "builder@travis-ci.com"
+- export TRAVIS_COMMIT_MSG="$(git log --format=%B -n 1 | head -n 1)"
+before_cache:
+  - rm -rf $HOME/.m2/repository/demo/
+cache:
+  directories:
+  - $HOME/.m2/repository
+# release script after build
+after_success:
+- "./release.sh"
