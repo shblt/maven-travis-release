@@ -36,7 +36,7 @@ if [ "$TRAVIS_BRANCH" == "master" ] && [[ $RELEASE_VERSION ]]; then
 elif [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
   echo "Release script found a pull request, skipping..."
 else
-  echo "Release script found a regular build, marking snapshot build..."
+  echo "Release script found a regular build, deploying snapshot build..."
   export DEPLOY=true
   export NEW_VERSION_ID=$(cat pom.xml | grep -P "<version>.*</version>" | head -n 1 |  tr -d "[:space:]" | sed -e 's/<\(\/\)\{0,1\}version>//g')
 
