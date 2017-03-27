@@ -1,4 +1,4 @@
-# maven-travis-release-depoyment
+# maven-travis-release
 
 Skeleton build/release process with Travis CI + Maven. 
 
