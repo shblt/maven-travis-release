@@ -8,7 +8,7 @@ This example implementation automates the release branch cut/creation proession 
 
 ## Implementation
 
-Placeholder
+![png](https://github.com/shblt/maven-travis-release-depoyment/blob/master/diagram.png)
 
 **Note:** When merging release branch into master use *"Create a merge commit"* in GitHub. "Squash and merge" will not work since `RELEASE_VERSION` is set using the standard "Merge pull request #X from org/branch" commit message.
 
