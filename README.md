@@ -1,12 +1,27 @@
-# maven-travis-release
+# maven-travis-release 
 
 Skeleton build/release process with Travis CI + Maven. 
 
 ## Purpose
 
-This example implementation automates the release branch cut/creation proession using the maven release plugin, and enables artifiact deployment from Travis. The branching model roughly follows [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/) where the *deploy* branch is named *"release-v<VERSION>"*. 
+This example implementation automates the release branch cut/creation process using the maven release plugin, and enables artifact  deployment from Travis.
 
 ## Implementation
+
+## Branches
+
+The branching model roughly follows [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/) where the *develop* branch is also the release branch, and named *"release-v<VERSION>"*. Branch structure: 
+
+ - **master** 
+   - Deployed production code. Should always be deployable from any commit. 
+ - **release-vX.Y.Z**
+   - Sprint long (or shorter) lived parent branch. It should contain only completed features and should be ready to be merged into master at anytime for a deploy.
+ - **feature**
+   - Developer branches for features and bug fixes. Merged into release and each merge should contain a single completed feature. 
+ - **hotfix/bugfix**
+   - Short lived branches for production issue or critical bug fixes. Created by branching master and then pushing to the current release branch. 
+ 
+## Cycle
 
 ![png](https://github.com/shblt/maven-travis-release-depoyment/blob/master/diagram.png)
 
